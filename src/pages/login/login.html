@@ -1,0 +1,31 @@
+<ion-content padding style="text-align: center;background-image: url('assets/imgs/backlogin.png'); background-size: 100% 100%; background-repeat: no-repeat; ">
+
+  <p style="color:white;font-size: 30px;">
+    <img  src="assets/imgs/logo_big.png" >
+    <br>
+  </p>
+
+  <div style="margin-top:10%;">
+    
+    <p style="color:red;">{{erreur}}</p>
+
+    <ion-list>
+      
+        <ion-item style="background:transparent;">
+          <ion-label floating style="color:white;" >Pseudo</ion-label>
+          <ion-input type="email" [(ngModel)]="username" style="color:white;"></ion-input>
+        </ion-item>
+      
+        <ion-item style="background:transparent;">
+          <ion-label floating style="color:white;">Mot de passe</ion-label>
+          <ion-input type="password" [(ngModel)]="password" style="color:white;"></ion-input>
+        </ion-item>
+
+        <button ion-button clear small  class="button-con" (click)="presentAlert()" style="color:white;">Mot de passe oublie</button>
+        <button ion-button clear small class="button-con" (click)="gotoInscription()" style="color:white;">Inscription</button>
+    </ion-list>
+   
+    <button ion-button round class="button-con" (click)="gotoHome()" style="background-color: #df1445">connexion</button>
+      
+  </div>
+</ion-content>

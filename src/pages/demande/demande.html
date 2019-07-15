@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar color ="coeur">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Mes demandes d'aides</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding style="text-align: center;background-image: url('assets/imgs/splash.png'); background-size: 100% 100%; background-repeat: no-repeat; ">
+    <ion-card  style="border-radius: 10px;" *ngFor="let demande of demandes">
+      <ion-row>
+          <ion-col col-9  >
+              <ion-row>
+                  <p style="font-size: larger; font-weight: 900; ">{{demande.categorie.titre}}</p>
+              </ion-row>
+              <ion-row >
+                <ion-col col-8 >
+
+                  <ion-row>
+                    <p style="color: #df1445;">{{demande.maladie}}</p>
+                  </ion-row>
+                  <ion-row>
+                      <p>{{demande.hopital.nom}}</p>
+                  </ion-row>
+                  <ion-row>
+                      <span style="padding-left: 4px; color:#0ba14b; font-weight: 900; text-align: left;">{{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000  | date:'dd'}} - {{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000 | date:'MM'}} - {{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000 | date:'yyyy'}} à {{demande.dateLimiteDeRecolteDesFonts.timestamp |  date:'HH:mm' }}</span>                  
+                </ion-row>
+                </ion-col>
+                <ion-col col-4>
+                    <circle-progress  [percent]="demande.montantRecu/demande.montantDemande*100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
+
+                    </circle-progress>
+                </ion-col>                 
+              
+              </ion-row>
+
+              
+              
+          </ion-col>
+          <ion-col col-3 style="background-color: #df1445" (click)="payment(demande)">
+            <br>
+            <br>
+            <span style="color:white; font-size: larger; font-weight: 900;"> Faire un don</span>
+          </ion-col>
+  
+          
+      </ion-row>    
+    </ion-card>   
+           
+  
+    
+  </ion-content>
+  

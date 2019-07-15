@@ -1,0 +1,60 @@
+<!--
+  Generated template for the FairedonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color ="coeur">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Faire un don</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="text-align: center; background-image: url('assets/imgs/splash.png'); background-size: 100% 100%; background-repeat: no-repeat; ">
+  <ion-card  style="border-radius: 10px;">
+    <ion-row>
+      <ion-col col-12 padding style="text-align: left">
+        <p> Nom: {{demande.nom}}</p>
+        <p> Maladie: {{demande.maladie}}</p>
+
+      </ion-col>        
+    </ion-row>    
+    <ion-row>
+        <ion-col col-8>
+            <ion-item style="background:transparent;">
+              <ion-label stacked color="coeur" style="font-weight: bold !important;">Montant </ion-label>
+              <ion-input type="number" placeholder="Entrer un montant" [(ngModel)]="montant"  ></ion-input>  
+            </ion-item>
+          </ion-col>   
+      <ion-col col-4 >
+
+        <ion-item  style="background:transparent;">
+          <ion-label  stacked color="coeur" style="font-weight: bold !important;">Devise</ion-label>
+          <ion-select  [(ngModel)]="devise">
+            <ion-option value="XAF" selected>XAF</ion-option>
+            <ion-option value="USD">USD</ion-option>
+            <ion-option value="EUR">EUR</ion-option>
+
+          </ion-select>
+        </ion-item>
+      </ion-col> 
+          
+    </ion-row>  
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Rester anonyme </ion-label>
+          <ion-checkbox color="dark" checked="true" [(ngModel)]="anonyme"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>  
+  </ion-card>  
+
+  <ion-footer  >
+      <ion-toolbar color="secondary" (click)="payment()">
+        <ion-title>VALIDER</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+</ion-content>

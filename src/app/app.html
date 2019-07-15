@@ -1,0 +1,61 @@
+<ion-menu [content]="content">
+  <ion-header >
+    <ion-toolbar color ="coeur">
+      <ion-title>Nanotech solutions</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <ion-list no-lines>
+          <button ion-item menuClose (click)="openPage('accueil')">
+            <ion-icon item-start name="md-home" color="elephant"></ion-icon>
+            Accueil
+          </button>
+    
+          <button ion-item menuClose (click)="openPage('demande')">
+            <ion-icon item-start name="md-megaphone" color="elephant" ></ion-icon>
+            Mes demandes d'aides
+          </button>
+
+          <button ion-item menuClose (click)="openPage('urgence')">
+              <ion-icon item-start name="md-megaphone" color="elephant" ></ion-icon>
+              Urgence en cours
+          </button>
+          <button ion-item menuClose (click)="openPage('patient')">
+            <ion-icon item-start name="md-search" color="elephant" ></ion-icon>
+            Patient hospitalisé
+          </button>
+          <button ion-item menuClose (click)="openPage('operation')">
+            <ion-icon item-start name="md-sync" color="elephant" ></ion-icon>
+            Operation chirugicale
+          </button>
+        
+    
+        </ion-list>
+        <ion-list no-lines>
+      
+          <button ion-item menuClose (click)="openPage('reglages')"  >
+            <ion-icon item-start name="md-settings" color="elephant"></ion-icon>
+            Réglages
+          </button>
+          <button ion-item menuClose (click)="openPage('about')" >
+            <ion-icon item-start name="md-information-circle" color="elephant" ></ion-icon>
+            A propos
+          </button>
+    
+          <button ion-item menuClose (click)="openPage('aide')">
+            <ion-icon item-start name="md-help" color ="elephant" ></ion-icon>
+            Aide
+        </button>
+        <button ion-item menuClose (click)="openPage('deconnexion')">
+            <ion-icon item-start name="md-exit" color="elephant" ></ion-icon>
+            Déconnexion
+        </button>
+          
+        </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
