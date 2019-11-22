@@ -24,7 +24,7 @@ export class FairedonPage {
   demande:any;
   anonyme:boolean= true ;
   constructor(public storage: Storage, public navCtrl: NavController, public navParams: NavParams, public payPal: PayPal, public loadingCtrl: LoadingController, public serviceweb: ServicewebProvider) {
-  
+
     this.demande = navParams.get('demande')
   }
 
@@ -36,9 +36,9 @@ export class FairedonPage {
     let loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
-  
+
     loading.present();
-  
+
     setTimeout(() => {
       loading.dismiss();
     }, 5000);
@@ -60,8 +60,8 @@ export class FairedonPage {
       }
       if(parseInt(this.montant) > 0){
         this.payPal.init({
-          PayPalEnvironmentProduction: 'AVp8JSIveweClezc69qwWgf01tAXdHr4VvE5uJWelsuenRhbX6AD9A5BjgtPvGpzSTnTzHGLiscNUbt6',
-          PayPalEnvironmentSandbox: 'AWBfYTHyUUtTQBmEzSKvRiFKwJPvaoVGeuEn_9AxvlhLAy4SdeutGjSNt116ekauIgY4-0GKggi-JpRz'
+          PayPalEnvironmentProduction: 'EH3OtBmYxXmj-Qjzb56FLPcGKFCALiiN1ScSxpgAi5ymRDJ6RdKKwxm3zalYVtRpOLWBpameBh50ywbx',
+          PayPalEnvironmentSandbox: 'EJc4FLGflHIJjRWdpOUQ7oF5Y5LKuB_iS_HtKMomZMt3DEyWneb9uVkZswKTDRNC83ag9gAf4ES8nfVf'
         }).then(() => {
           // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction
           this.payPal.prepareToRender('PayPalEnvironmentNoNetwork', new PayPalConfiguration({
@@ -89,7 +89,7 @@ export class FairedonPage {
               })
 
               console.log(data)
-             
+
             }, () => {
               // Error or render dialog closed without being successful
               console.log("erreur 1")
@@ -97,12 +97,12 @@ export class FairedonPage {
           }, () => {
             // Error in configuration
             console.log("erreur 2")
-    
+
           });
         }, () => {
           // Error in initialization, maybe PayPal isn't supported or something else
           console.log("erreur 3")
-    
+
         });
       }
 

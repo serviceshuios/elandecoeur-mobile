@@ -21,13 +21,13 @@ export class RegisterPage {
   submitted: boolean = false;
   verif: boolean = false;
   loader:any;
-  
+
   constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public serviceweb :ServicewebProvider) {
     this.login = this.formBuilder.group({
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.required],
       username: ['', Validators.compose([Validators.required])],
-      
+
       adresse: ['', Validators.compose([Validators.required])],
       numeroCni: ['', Validators.compose([Validators.required])],
       lieuDelivranceCni: ['', Validators.compose([Validators.required])],
@@ -50,16 +50,16 @@ export class RegisterPage {
           this.serviceweb.register(this.login.value).then((data)=>{
             if(data.status == 500){
               console.error(JSON.parse(data.error));
-              
+
               this.presentAlert(2,JSON.parse(data.error).message)
             }
             if(data.status == 200){
               this.presentAlert(3,data)
             }
-            
+
           }).catch((error)=>{
             console.error(error);
-            
+
           })
       }else{
         console.log("pb de verif")
@@ -108,7 +108,7 @@ export class RegisterPage {
 
         let alert = this.alertCtrl.create({
           title: 'FELICITATION',
-          subTitle: "Inscription réussi !",
+          subTitle: "Inscription réussie !",
           buttons: [{
             cssClass:"btn-elephant",
             text: 'fermer',
@@ -119,7 +119,7 @@ export class RegisterPage {
           }]
         });
         alert.present();
-        } 
+        }
   }
 
 }

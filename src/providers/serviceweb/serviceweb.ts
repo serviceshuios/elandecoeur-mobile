@@ -12,9 +12,9 @@ import { c } from '@angular/core/src/render3';
 export class ServicewebProvider {
  loading: any
 // url: string="http://192.168.0.102/elandecoeur/public/api/"
- url: string="http://603ddf18.ngrok.io/elandecoeur/public/api/"
+ url: string="http://localhost:8000/api/"
 
- 
+
   constructor( public loadingCtrl: LoadingController, public HTTP: HTTP) {
     console.log('Hello ServicewebProvider Provider');
   }
@@ -22,7 +22,7 @@ export class ServicewebProvider {
   presentLoadingDefault() {
     this.loading = this.loadingCtrl.create({
     });
-  
+
     this.loading.present();
   }
 
@@ -38,7 +38,7 @@ export class ServicewebProvider {
       //console.log(data)
       return data;
     }).catch((error)=>{
-      
+
       //console.log(error)
       this.loading.dismiss();
       return error;
@@ -72,7 +72,7 @@ export class ServicewebProvider {
       return error;
     })
     return e;
-  }  
+  }
 
   async demandeaccueil()
   {
@@ -85,7 +85,7 @@ export class ServicewebProvider {
       return error;
     })
     return e;
-  }  
+  }
 
   async convertdevise(montant, devise)
   {
@@ -98,7 +98,7 @@ export class ServicewebProvider {
       return error;
     })
     return e;
-  }  
+  }
 
   async confirmdonation(montant, moyenpaiement, idtransaction, anonyme, demande, utilisateur)
   {
@@ -111,7 +111,7 @@ export class ServicewebProvider {
       return error;
     })
     return e;
-  }  
+  }
 
   async demandebyuser(utilisateur)
   {
@@ -126,7 +126,7 @@ export class ServicewebProvider {
       return error;
     })
     return e;
-  }  
+  }
 
   async demandebycategorie(id)
   {
@@ -141,4 +141,19 @@ export class ServicewebProvider {
     })
     return e;
   }
+
+  async getCotisations(id)
+  {
+    console.log(id);
+    this.presentLoadingDefault()
+    let e = await this.HTTP.get(this.url+"demandeMontantDonations/"+id,{},{}).then(data =>{
+      this.loading.dismiss();
+      return data;
+    }).catch((error)=>{
+      this.loading.dismiss();
+      return error;
+    })
+    return e;
+  }
+
 }

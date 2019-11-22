@@ -15,48 +15,48 @@
   <form [formGroup]="login"  (ngSubmit)="inscription()">
     <ion-list>
         <ion-list-header style="font-weight: bold !important;font-size: 20px !important;">
-          Information du compte 
-        </ion-list-header> 
-  
+          Information du compte
+        </ion-list-header>
+
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">Pseudo</ion-label>
           <ion-input type="text"  formControlName="username" ></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.username.valid || submitted === false" color="danger" item-end></ion-icon>
         </ion-item>
-      
+
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">Email</ion-label>
           <ion-input type="email"  formControlName="email"></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.email.valid || submitted === false" color="danger" item-end></ion-icon>
         </ion-item>
-  
+
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;"  >Mot de passe</ion-label>
           <ion-input type="password"   name="password" formControlName="password"></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.password.valid || submitted === false" color="danger" item-end></ion-icon>
         </ion-item>
-  
+
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;"  >Confirmation</ion-label>
           <ion-input type="password" formControlName="verification" ></ion-input>
           <ion-icon name="md-close" [hidden]="(login.controls.verification.valid || submitted === false) && verif === false" color="danger" item-end></ion-icon>
-  
+
         </ion-item>
-      
+
       </ion-list>
-  
+
       <ion-list>
         <ion-list-header style="font-weight: bold !important; font-size: 20px !important;">
-          Information personnelle 
-        </ion-list-header> 
-        
+          Information personnelle
+        </ion-list-header>
+
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;" >Nom</ion-label>
           <ion-input type="text" formControlName="nom" ></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.nom.valid || submitted === false" color="danger" item-end></ion-icon>
-  
+
         </ion-item>
-  
+
         <ion-item  style="background:transparent;">
           <ion-label  stacked color="coeur" style="font-weight: bold !important;">Genre</ion-label>
           <ion-select formControlName="sexe" >
@@ -65,36 +65,37 @@
 
           </ion-select>
         </ion-item>
-          
+
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">Téléphone </ion-label>
           <ion-input type="number" formControlName="telephone" placeholder=" Ex: 6*******"  ></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.telephone.valid || submitted === false" color="danger" item-end></ion-icon>
-  
+
         </ion-item>
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">Adresse </ion-label>
-          <ion-input type="text" formControlName="adresse"  ></ion-input> 
+          <ion-input type="text" formControlName="adresse"  ></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.adresse.valid || submitted === false" color="danger" item-end></ion-icon>
- 
+
         </ion-item>
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">N° CNI </ion-label>
-          <ion-input type="number" formControlName="numeroCni"  ></ion-input>  
+          <ion-input type="number" formControlName="numeroCni"  ></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.numeroCni.valid || submitted === false" color="danger" item-end></ion-icon>
 
         </ion-item>
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">Date de delivrance </ion-label>
-          <ion-input type="date" formControlName="dateExpirattionCni"  ></ion-input> 
+
+          <ion-datetime displayFormat="MM/DD/YYYY" formControlName="dateExpirattionCni"></ion-datetime>
           <ion-icon name="md-close" [hidden]="login.controls.dateExpirattionCni.valid || submitted === false" color="danger" item-end></ion-icon>
- 
+
         </ion-item>
         <ion-item style="background:transparent;">
           <ion-label stacked color="coeur" style="font-weight: bold !important;">Lieu de delivrance </ion-label>
-          <ion-input type="text" formControlName="lieuDelivranceCni"  ></ion-input> 
+          <ion-input type="text" formControlName="lieuDelivranceCni"  ></ion-input>
           <ion-icon name="md-close" [hidden]="login.controls.lieuDelivranceCni.valid || submitted === false" color="danger" item-end></ion-icon>
- 
+
         </ion-item>
 
         <ion-item style="background:transparent;">
@@ -102,7 +103,7 @@
           <ion-radio color="coeur" value="go"></ion-radio>
         </ion-item>
       </ion-list>
-  
+
       <button ion-button round class="button-con" type="submit" style="background-color: #0ba14b" >inscription </button>
      </form>
 </ion-content>

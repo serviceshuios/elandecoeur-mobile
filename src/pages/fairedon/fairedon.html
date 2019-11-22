@@ -19,15 +19,15 @@
         <p> Nom: {{demande.nom}}</p>
         <p> Maladie: {{demande.maladie}}</p>
 
-      </ion-col>        
-    </ion-row>    
+      </ion-col>
+    </ion-row>
     <ion-row>
         <ion-col col-8>
             <ion-item style="background:transparent;">
               <ion-label stacked color="coeur" style="font-weight: bold !important;">Montant </ion-label>
-              <ion-input type="number" placeholder="Entrer un montant" [(ngModel)]="montant"  ></ion-input>  
+              <ion-input type="number" placeholder="Entrer un montant" [(ngModel)]="montant"  ></ion-input>
             </ion-item>
-          </ion-col>   
+          </ion-col>
       <ion-col col-4 >
 
         <ion-item  style="background:transparent;">
@@ -39,9 +39,9 @@
 
           </ion-select>
         </ion-item>
-      </ion-col> 
-          
-    </ion-row>  
+      </ion-col>
+
+    </ion-row>
     <ion-row>
       <ion-col>
         <ion-item>
@@ -49,12 +49,16 @@
           <ion-checkbox color="dark" checked="true" [(ngModel)]="anonyme"></ion-checkbox>
         </ion-item>
       </ion-col>
-    </ion-row>  
-  </ion-card>  
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+    <ion-toolbar color="dark" (click)="payment()">
+      <ion-title>DONNER</ion-title>
+    </ion-toolbar>
+    </ion-card>
 
   <ion-footer  >
-      <ion-toolbar color="secondary" (click)="payment()">
-        <ion-title>VALIDER</ion-title>
-      </ion-toolbar>
-    </ion-footer>
+
+  </ion-footer>
 </ion-content>

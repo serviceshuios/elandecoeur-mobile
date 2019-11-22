@@ -22,34 +22,36 @@
                   </ion-row>
                   <ion-row>
                       <p>{{demande.hopital.nom}}</p>
+                      <p>{{demande.montantDemande}} FCFA demandés</p>
+                      <p>{{demande.montantRecu}} FCFA reçus</p>
                   </ion-row>
                   <ion-row>
-                      <span style="padding-left: 4px; color:#0ba14b; font-weight: 900; text-align: left;">{{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000  | date:'dd'}} - {{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000 | date:'MM'}} - {{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000 | date:'yyyy'}} à {{demande.dateLimiteDeRecolteDesFonts.timestamp |  date:'HH:mm' }}</span>                  
+                      <span style="padding-left: 4px; color:#0ba14b; font-weight: 900; text-align: left;">{{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000  | date:'dd'}} - {{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000 | date:'MM'}} - {{demande.dateLimiteDeRecolteDesFonts.timestamp * 1000 | date:'yyyy'}} à {{demande.dateLimiteDeRecolteDesFonts.timestamp |  date:'HH:mm' }}</span>
                 </ion-row>
                 </ion-col>
                 <ion-col col-4>
                     <circle-progress  [percent]="demande.montantRecu/demande.montantDemande*100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="300">
 
                     </circle-progress>
-                </ion-col>                 
-              
+                </ion-col>
+
               </ion-row>
 
-              
-              
+
+
           </ion-col>
           <ion-col col-3 style="background-color: #df1445" (click)="payment(demande)">
             <br>
             <br>
             <span style="color:white; font-size: larger; font-weight: 900;"> Faire un don</span>
           </ion-col>
-  
-          
-      </ion-row>    
-    </ion-card>   
-   
-        
-         
 
-  
+
+      </ion-row>
+    </ion-card>
+
+
+
+
+
 </ion-content>
